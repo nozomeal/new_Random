@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    /* var n = rand.count   と
+    /* 
+        var n = rand.count   と
         rand.removeAtIndex(rand[0])のような要素を削除するコードを用いて
         かこうとしていたのですが、fatal error: Array index out of range　　がでて
         １度要素を削除したあと　２回目にif文を通るときにすでに要素が消えているので　エラーが出ることは
