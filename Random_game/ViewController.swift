@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    /* var n = rand.count   と
+        rand.removeAtIndex(rand[0])のような要素を削除するコードを用いて
+        かこうとしていたのですが、fatal error: Array index out of range　　がでて
+        １度要素を削除したあと　２回目にif文を通るときにすでに要素が消えているので　エラーが出ることは
+        わかったのですが、　うまくそれを書き換えることができなかったので、以下の方法で実行しました　　*/
+    
     //ラベルのアウトレット接続
     @IBOutlet weak var label:UILabel!
 
