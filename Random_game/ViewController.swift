@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label:UILabel!
 
     
-    //ボタンの初期設定
+    //それぞれのボタンの初期設定
     private var button1: UIButton!
     private var button2: UIButton!
     private var button3: UIButton!
@@ -30,10 +30,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        //配列の要素数を取得する
-        var n: Int = rand.count
         
-        //１〜４までの数をランダムに決める
+        
+        //それぞれ１〜４までの数をランダムに決める
          rand[0] = Int(arc4random_uniform(4)+1)
          rand[1] = Int(arc4random_uniform(4)+1)
          rand[2] = Int(arc4random_uniform(4)+1)
@@ -128,123 +127,265 @@ class ViewController: UIViewController {
         
     }
 
+    
+
+
+    //残りの配列の要素数の宣言
+    var x: Int = 3
+    
+    //button1を押したときの動作設定
+    internal func onClickbutton1(button1: UIButton){
+        
+        //要素の数が3個ならば
+        if x == 3 {
+            //rand[0]が１のとき
+            if rand[0] == button1.tag {
+                //残りの３桁のみ表示
+                label.text = "\(rand[1])\(rand[2])\(rand[3])"
+                //残りの要素数は２となる
+                x = 2
+                //rand[0]の要素を削除
+                //rand.removeAtIndex(rand[0])
+            }
+            
+        //要素の数が2個ならば
+        }else if x == 2 {
+            //rand[1]が１のとき
+            if rand[1] == button1.tag {
+                //残り２桁のみ表示
+                label.text = "\(rand[2])\(rand[3])"
+                //残りの要素数は１となる
+                x = 1
+                //rand[1]の要素を削除
+                //rand.removeAtIndex(rand[1])
+            }
+            
+        //要素の数が1個ならば
+        }else if x == 1 {
+            //rand[2]が１のとき
+            if rand[2] == button1.tag {
+                //残りの１桁を表示
+                label.text = "\(rand[3])"
+                //残りの要素数は１となる
+                x = 0
+                //rand[2]の要素を削除
+                //rand.removeAtIndex(rand[2])
+            }
+        //要素の個数が０個ならば
+        }else if x == 0 {
+            
+            if rand[3] == button1.tag {
+                //rand[3]の要素を削除
+                //rand.removeAtIndex(rand[3])
+                //それぞれ１〜４までの数をランダムに決める
+                rand[0] = Int(arc4random_uniform(4)+1)
+                rand[1] = Int(arc4random_uniform(4)+1)
+                rand[2] = Int(arc4random_uniform(4)+1)
+                rand[3] = Int(arc4random_uniform(4)+1)
+            
+            
+                //ランダムな４桁の数字をラベルに表示する
+                label.text = "\(rand[0])\(rand[1])\(rand[2])\(rand[3])"
+                //また要素が３個となる
+                x = 3
+            }
+        }
+        }
+    
+    
+    
+    //button1を押したときの動作設定
+    internal func onClickbutton2(button2: UIButton){
+        
+        //要素の数が3個ならば
+        if x == 3 {
+            //rand[0]が１のとき
+            if rand[0] == button2.tag {
+                //残りの３桁のみ表示
+                label.text = "\(rand[1])\(rand[2])\(rand[3])"
+                //残りの要素数は２となる
+                x = 2
+                //rand[0]の要素を削除
+                //rand.removeAtIndex(rand[0])
+            }
+            
+            //要素の数が2個ならば
+        }else if x == 2 {
+            //rand[1]が１のとき
+            if rand[1] == button2.tag {
+                //残り２桁のみ表示
+                label.text = "\(rand[2])\(rand[3])"
+                //残りの要素数は１となる
+                x = 1
+                //rand[1]の要素を削除
+                //rand.removeAtIndex(rand[1])
+            }
+            
+            //要素の数が1個ならば
+        }else if x == 1 {
+            //rand[2]が１のとき
+            if rand[2] == button2.tag {
+                //残りの１桁を表示
+                label.text = "\(rand[3])"
+                //残りの要素数は１となる
+                x = 0
+                //rand[2]の要素を削除
+                //rand.removeAtIndex(rand[2])
+            }
+            //要素の個数が０個ならば
+        }else if x == 0 {
+            
+            if rand[3] == button2.tag {
+                //rand[3]の要素を削除
+                //rand.removeAtIndex(rand[3])
+                //それぞれ１〜４までの数をランダムに決める
+                rand[0] = Int(arc4random_uniform(4)+1)
+                rand[1] = Int(arc4random_uniform(4)+1)
+                rand[2] = Int(arc4random_uniform(4)+1)
+                rand[3] = Int(arc4random_uniform(4)+1)
+                
+                
+                //ランダムな４桁の数字をラベルに表示する
+                label.text = "\(rand[0])\(rand[1])\(rand[2])\(rand[3])"
+                
+                
+                //また要素が３個となる
+                x = 3
+            }
+        }
+    }
+
+    
+    
+    
+    //button1を押したときの動作設定
+    internal func onClickbutton3(button3: UIButton){
+        
+        //要素の数が3個ならば
+        if x == 3 {
+            //rand[0]が１のとき
+            if rand[0] == button3.tag {
+                //残りの３桁のみ表示
+                label.text = "\(rand[1])\(rand[2])\(rand[3])"
+                //残りの要素数は２となる
+                x = 2
+                //rand[0]の要素を削除
+                //rand.removeAtIndex(rand[0])
+            }
+            
+            //要素の数が2個ならば
+        }else if x == 2 {
+            //rand[1]が１のとき
+            if rand[1] == button3.tag {
+                //残り２桁のみ表示
+                label.text = "\(rand[2])\(rand[3])"
+                //残りの要素数は１となる
+                x = 1
+                //rand[1]の要素を削除
+                //rand.removeAtIndex(rand[1])
+            }
+            
+            //要素の数が1個ならば
+        }else if x == 1 {
+            //rand[2]が１のとき
+            if rand[2] == button3.tag {
+                //残りの１桁を表示
+                label.text = "\(rand[3])"
+                //残りの要素数は１となる
+                x = 0
+                //rand[2]の要素を削除
+                //rand.removeAtIndex(rand[2])
+            }
+            //要素の個数が０個ならば
+        }else if x == 0 {
+            
+            if rand[3] == button3.tag {
+                //rand[3]の要素を削除
+                //rand.removeAtIndex(rand[3])
+                //それぞれ１〜４までの数をランダムに決める
+                rand[0] = Int(arc4random_uniform(4)+1)
+                rand[1] = Int(arc4random_uniform(4)+1)
+                rand[2] = Int(arc4random_uniform(4)+1)
+                rand[3] = Int(arc4random_uniform(4)+1)
+                
+                
+                //ランダムな４桁の数字をラベルに表示する
+                label.text = "\(rand[0])\(rand[1])\(rand[2])\(rand[3])"
+                
+                //また要素が３個となる
+                x = 3
+            }
+        }
+    }
+
+    
+    
+    
+    //button1を押したときの動作設定
+    internal func onClickbutton4(button1: UIButton){
+        
+        //要素の数が3個ならば
+        if x == 3 {
+            //rand[0]が１のとき
+            if rand[0] == button4.tag {
+                //残りの３桁のみ表示
+                label.text = "\(rand[1])\(rand[2])\(rand[3])"
+                //残りの要素数は２となる
+                x = 2
+                //rand[0]の要素を削除
+                //rand.removeAtIndex(rand[0])
+            }
+            
+            //要素の数が2個ならば
+        }else if x == 2 {
+            //rand[1]が１のとき
+            if rand[1] == button4.tag {
+                //残り２桁のみ表示
+                label.text = "\(rand[2])\(rand[3])"
+                //残りの要素数は１となる
+                x = 1
+                //rand[1]の要素を削除
+                //rand.removeAtIndex(rand[1])
+            }
+            
+            //要素の数が1個ならば
+        }else if x == 1 {
+            //rand[2]が１のとき
+            if rand[2] == button4.tag {
+                //残りの１桁を表示
+                label.text = "\(rand[3])"
+                //残りの要素数は１となる
+                x = 0
+                //rand[2]の要素を削除
+                //rand.removeAtIndex(rand[2])
+            }
+            //要素の個数が０個ならば
+        }else if x == 0 {
+            
+            if rand[3] == button4.tag {
+                //rand[3]の要素を削除
+                //rand.removeAtIndex(rand[3])
+                //それぞれ１〜４までの数をランダムに決める
+                rand[0] = Int(arc4random_uniform(4)+1)
+                rand[1] = Int(arc4random_uniform(4)+1)
+                rand[2] = Int(arc4random_uniform(4)+1)
+                rand[3] = Int(arc4random_uniform(4)+1)
+                
+                
+                //ランダムな４桁の数字をラベルに表示する
+                label.text = "\(rand[0])\(rand[1])\(rand[2])\(rand[3])"
+                
+                //また要素が３個となる
+                x = 3
+            }
+        }
+    }
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-    }
-
-    
-    
-    
-    internal func onClickbutton1(button1: UIButton){
-        
-        //配列の要素数を取得する
-        var n: Int = rand.count
-        
-        //要素の数が４個　かつ　rand[0]が１のとき
-        if n == 4 && rand[0] == button1.tag {
-                //残りの３桁のみとなる
-                label.text = "\(rand[1])\(rand[2])\(rand[3])"
-                //rand[0]の要素を削除
-                rand.removeAtIndex(rand[1])
-            
-            //要素の数が３個　かつ　rand[1]が１のとき
-        }else if n == 3 && rand[1] == button1.tag {
-                //残り２桁のみとなる
-                label.text = "\(rand[2])\(rand[3])"
-                //rand[1]の要素を削除
-                rand.removeAtIndex(rand[1])
-            
-            //要素の数が２個 かつ　rand[2]が１のとき
-        }else if n == 2 && rand[2] == button1.tag {
-                //残りの１桁を表示
-                label.text = "\(rand[3])"
-                //rand[2]の要素を削除
-                rand.removeAtIndex(rand[2])
-    
-            //要素の個数が１こ かつ　rand[3]のとき
-        }else if n == 1 && rand[3] == button1.tag {
-                //rand[3]の要素を削除
-                rand.removeAtIndex(rand[3])
-            }
-            
-        }
-
-    
-
-    
-    internal func onClickbutton2(button2: UIButton){
-       
-        //配列の要素数を取得する
-        var n: Int = rand.count
-        
-        if n == 4 && rand[0] == button2.tag {
-                label.text = "\(rand[1])\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[0])
-    
-        }else if n == 3 && rand[1] == button2.tag {
-                label.text = "\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[1])
-            
-        }else if n == 2 && rand [2] == button2.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[2])
-            
-        }else if n == 1 && rand[3] == button2.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[3])
-            
-        }
-    
-}
-    internal func onClickbutton3(button3: UIButton){
-    
-        //配列の要素数を取得する
-        var n: Int = rand.count
-        
-        if n == 4 && rand[0] == button3.tag {
-                label.text = "\(rand[1])\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[0])
-            
-        }else if n == 3 && rand[1] == button3.tag {
-                label.text = "\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[1])
-            
-        }else if n == 2 && rand[3] == button3.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[2])
-        }else if n == 1 && rand[3] == button3.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[3])
-        }
     }
     
-    internal func onClickbutton4(button4: UIButton){
-        
-        //配列の要素数を取得する
-        var n: Int = rand.count
-        
-        
-        if n == 4 && rand[0] == button4.tag {
-                //rand1は消えるので残りのrand2,rand3,rand4を表示する
-                label.text = "\(rand[1])\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[0])
-            
-        }else if n == 3 && rand[1] == button4.tag {
-                label.text = "\(rand[2])\(rand[3])"
-                rand.removeAtIndex(rand[1])
-        }else if n == 2 && rand [2] == button4.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[2])
-            
-        }else if n == 1 && rand[3] == button4.tag {
-                label.text = "\(rand[3])"
-                rand.removeAtIndex(rand[3])
-            }
-
-        
-    }
-
 }
 
